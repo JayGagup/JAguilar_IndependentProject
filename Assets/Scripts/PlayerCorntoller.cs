@@ -5,9 +5,11 @@ using UnityEngine;
 public class PlayerCorntoller : MonoBehaviour
 {
     public float speed;
-
     private float HorizontalInput;
     private float VerticalInput;
+
+    public GameObject platesPrefab;
+    public Transform handsTransform;
 
     // Start is called before the first frame update
     void Start()
@@ -22,5 +24,16 @@ public class PlayerCorntoller : MonoBehaviour
         transform.Translate(Vector3.right * Time.deltaTime * speed * HorizontalInput);
         VerticalInput = Input.GetAxis("Vertical");
         transform.Translate(Vector3.forward * Time.deltaTime * speed * VerticalInput);
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            AttachToHand(handsTransform);
+        }
+    }
+   
+    private void AttachToHand(Transform playerTransform)
+    {
+        transform.SetParent(handsTransform);
+
     }
 }
