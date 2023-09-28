@@ -25,15 +25,8 @@ public class PlayerCorntoller : MonoBehaviour
         VerticalInput = Input.GetAxis("Vertical");
         transform.Translate(Vector3.forward * Time.deltaTime * speed * VerticalInput);
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            AttachToHand(handsTransform);
-        }
+        
     }
    
-    private void AttachToHand(Transform playerTransform)
-    {
-        transform.SetParent(handsTransform);
-
-    }
+   
 }
