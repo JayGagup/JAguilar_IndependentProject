@@ -8,8 +8,7 @@ public class PlayerCorntoller : MonoBehaviour
     private float HorizontalInput;
     private float VerticalInput;
 
-    public GameObject platesPrefab;
-    public Transform handsTransform;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +26,5 @@ public class PlayerCorntoller : MonoBehaviour
 
         
     }
-   
-   
+     
 }
